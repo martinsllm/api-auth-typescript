@@ -1,10 +1,10 @@
-import { Request, Response, Router } from "express";
-import { BadRequestError } from "./helpers/api-errors";
+import { Router } from "express";
+import { UserController } from "./controllers/UserController";
 
 const routes = Router()
 
-routes.get('/', (req: Request, res: Response): any => {
-    throw new BadRequestError('Erro lançado')
-})
+const userController = new UserController()
+
+routes.post('/user', userController.create)
 
 export default routes
