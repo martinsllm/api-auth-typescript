@@ -24,4 +24,8 @@ export class UserController {
 
         return res.status(201).json(user)
     }
+
+    async getProfile(req: Request, res: Response): Promise<any> {
+        return res.json(req.user)
+    }
 }
